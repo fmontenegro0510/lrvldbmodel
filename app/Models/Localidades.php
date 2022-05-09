@@ -11,7 +11,7 @@ class Localidades extends Model
 
     public function postulantes()
     {
-        return $this->hasMany('Postulantes::class');
+        return $this->hasMany(Postulantes::class);
     }
 
 }

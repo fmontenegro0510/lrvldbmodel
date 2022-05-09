@@ -14,8 +14,9 @@ class Estadocivil extends Model
      * (<- un estado civil esta en [muchos] postulantes)
     */
 
-    public function postulantes(){
-        return $this->hasMany('Postulantes::class');
+    public function postulantes()
+    {
+        return $this->hasMany(Postulantes::class);
     }
     
 }

@@ -12,11 +12,11 @@ class Postulantes extends Model
     //defino las relaciones entre Postulante y estado civil
     public function estadocivil()
     {
-        return $this->belongsTo('Estadocivil::class');
+        return $this->belongsTo(Estadocivil::class);
     }
     //defino las relaciones entre Postulantes y Localidades
     public function localidad()
     {
-        return $this->belongsTo('Localidades::class');
+        return $this->belongsTo(Localidades::class);
     }
 }
