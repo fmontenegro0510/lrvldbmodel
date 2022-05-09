@@ -15,7 +15,7 @@ class Estadocivil extends Model
     */
 
     public function postulantes(){
-        return $this->hasMany('App\Models\Postulantes');
+        return $this->hasMany('Postulantes::class');
     }
     
 }

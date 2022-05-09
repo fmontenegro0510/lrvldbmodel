@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Estadocivil;
+use App\Models\Localidades;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,14 +25,8 @@ return new class extends Migration
             $table->string('domicilio')->nullable();
             $table->string('url_foto')->nullable();
             $table->string('cargo_ocupa')->nullable();
-            $table->unsignedBigInteger('idestadocivil');
-            $table->unsignedBigInteger('idlocalidad');
-            $table->foreign('idestadocivil')
-                ->references('id')->on('estadocivils')
-                ->onDelete('set null');
-            $table->foreign('idlocalidad')
-                ->references('id')->on('localidades')
-                ->onDelete('set null');
+            $table->foreignId('idestadocivil')->constrained('estadocivils');
+            $table->foreignId('idlocalidad')->constrained('localidades');
             $table->timestamps();
         });
     }
